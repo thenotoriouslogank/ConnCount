@@ -84,5 +84,6 @@ def Clear():
     GPIO.output(p, GPIO.HIGH)
 
 One()
+sleep(10)
 
 GPIO.cleanup()
