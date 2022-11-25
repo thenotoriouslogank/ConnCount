@@ -12,7 +12,7 @@ F = 25
 G = 19
 DP = 6
 
-ZERO = [A, B, C, D, E, F]
+#ZERO = [A, B, C, D, E, F]
 ONE = [B, C]
 TWO = [A, B, D, E, G]
 THREE = [A, B, C, D, G]
@@ -24,23 +24,18 @@ EIGHT = [A, B, C, D, E, F, G]
 NINE = [A, B, C, F, G]
 ALL = [A, B, C, D, E, F, G, DP]
 
+class Display:
+  def __init__(self, digit: int, segments: list):
+    self.digit = digit
+    self.segments = segments
+
 def Prep():
   for segments in ALL:
     GPIO.setup(segments, GPIO.OUT)
 
-""" 
-GPIO.setup(A, GPIO.OUT)
-GPIO.setup(B, GPIO.OUT)
-GPIO.setup(C, GPIO.OUT)
-GPIO.setup(D, GPIO.OUT)
-GPIO.setup(E, GPIO.OUT)
-GPIO.setup(F, GPIO.OUT)
-GPIO.setup(G, GPIO.OUT)
-GPIO.setup(DP, GPIO.OUT)
- """
-def Zero():
-  for p in ZERO:
-    GPIO.output(p, GPIO.LOW)
+#def Zero():
+#  for p in ZERO:
+#    GPIO.output(p, GPIO.LOW)
     
 def One():
   for p in ONE:
@@ -86,40 +81,51 @@ def Clear():
   for p in ALL:
     GPIO.output(p, GPIO.HIGH)
 
+ZERO = Display('0, [A, B, C, D, E, ,F]')
+
+MyNum = int(0)
+
+def Check():
+  if ZERO.digit == MyNum:
+    print('ZERO')
+  else:
+    print('Somethig done got fuckered.')
+
 Prep()
-Zero()
-sleep(1)
-Clear()
-One()
-sleep(1)
-Clear()
-Two()
-sleep(1)
-Clear()
-Three()
-sleep(1)
-Clear()
-Four()
-sleep(1)
-Clear()
-Five()
-sleep(1)
-Clear()
-Six()
-sleep(1)
-Clear()
-Seven()
-sleep(1)
-Clear()
-Eight()
-sleep(1)
-Clear()
-Nine()
-sleep(1)
-Clear()
-All()
-sleep(1)
-Clear()
-print("Done.")
+Check()
+#Zero()
+#sleep(1)
+#Clear()
+#One()
+#sleep(1)
+#Clear()
+#Two()
+#sleep(1)
+#Clear()
+#Three()
+#sleep(1)
+#Clear()
+#Four()
+#sleep(1)
+#Clear()
+#Five()
+#sleep(1)
+#Clear()
+#Six()
+#sleep(1)
+#Clear()
+#Seven()
+#sleep(1)
+#Clear()
+#Eight()
+#sleep(1)
+#Clear()
+#Nine()
+#sleep(1)
+#Clear()
+#All()
+#sleep(1)
+#Clear()
+#print("Done.")
 sleep(10)
 GPIO.cleanup()
