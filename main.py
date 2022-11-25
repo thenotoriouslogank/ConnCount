@@ -3,7 +3,7 @@ from time import sleep
 
 GPIO.setmode(GPIO.BCM)
 
-A = 4
+A = 17
 GPIO.setup(A, GPIO.OUT)
 
 B = 27
@@ -15,13 +15,13 @@ GPIO.setup(C, GPIO.OUT)
 D = 23
 GPIO.setup(D, GPIO.OUT)
 
-E = 18
+E = 24
 GPIO.setup(E, GPIO.OUT)
 
 F = 25
 GPIO.setup(F, GPIO.OUT)
 
-G = 5
+G = 19
 GPIO.setup(G, GPIO.OUT)
 
 DP = 6
