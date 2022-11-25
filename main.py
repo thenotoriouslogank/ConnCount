@@ -43,7 +43,7 @@ def TestMe():
 
 def LED():
   for i in DIGITS:
-    print(i)
+    print(i.digit)
 
 #def Check():
 #  if ZERO.digit == MyNum:
