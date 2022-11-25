@@ -79,14 +79,26 @@ def Nine():
   for p in NINE:
     GPIO.output(p, GPIO.LOW)
 
+def All():
+  for p in ALL:
+    GPIO.output(p, GPIO.LOW)
+
 def Clear():
   for p in ALL:
     GPIO.output(p, GPIO.HIGH)
 
-One()
-sleep(10)
-Clear()
-sleep(10)
 Zero()
+One()
+Two()
+Three()
+Four()
+Five()
+Six()
+Seven()
+Eight()
+Nine()
+All()
+Clear()
+print("Done.")
 sleep(10)
 GPIO.cleanup()
