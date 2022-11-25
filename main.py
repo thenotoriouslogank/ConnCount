@@ -40,43 +40,43 @@ NINE = [A, B, C, F, G]
 
 def Zero():
   for p in ZERO:
-    GPIO.output(p, GPIO.HIGH)
+    GPIO.output(p, GPIO.LOW)
     
 def One():
   for p in ONE:
-    GPIO.output(p, GPIO.HIGH)
+    GPIO.output(p, GPIO.LOW)
     
 def Two():
   for p in TWO:
-    GPIO.output(p, GPIO.HIGH)
+    GPIO.output(p, GPIO.LOW)
     
 def Three():
   for p in THREE:
-    GPIO.output(p, GPIO.HIGH)
+    GPIO.output(p, GPIO.LOW)
     
 def Four():
   for p in FOUR:
-    GPIO.output(p, GPIO.HIGH)
+    GPIO.output(p, GPIO.LOW)
 
 def Five():
   for p in FIVE:
-    GPIO.output(p, GPIO.HIGH)
+    GPIO.output(p, GPIO.LOW)
     
 def Six():
   for p in SIX:
-    GPIO.output(p, GPIO.HIGH)
+    GPIO.output(p, GPIO.LOW)
     
 def Seven():
   for p in SEVEN:
-    GPIO.output(p, GPIO.HIGH)
+    GPIO.output(p, GPIO.LOW)
     
 def Eight():
   for p in EIGHT:
-    GPIO.output(p, GPIO.HIGH)
+    GPIO.output(p, GPIO.LOW)
     
 def Nine():
   for p in NINE:
-    GPIO.output(p, GPIO.HIGH)
+    GPIO.output(p, GPIO.LOW)
     
 One()
 sleep(3)
