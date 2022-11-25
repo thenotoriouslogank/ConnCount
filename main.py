@@ -55,6 +55,7 @@ def LED():
 
 Prep()
 TestMe()
+LED()
 #Check()
 #Zero()
 #sleep(1)
