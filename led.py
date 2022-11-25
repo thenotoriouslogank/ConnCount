@@ -1,6 +1,6 @@
 import RPi.GPIO as GPIO
-import ping
-import extract
+from ping import ping
+from extract import GetTotal
 from time import sleep
 
 A = 17
@@ -33,7 +33,7 @@ DIGITS = [ALL, ONE, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE]
 def Prep():
   GPIO.setmode(GPIO.BCM)
   GPIO.setup(ALL.segments, GPIO.OUT)
-  fp = open('ip.tmp', 'x')
+  fp = open('ip', 'x')
   fp.close()
 
 def LED():
@@ -43,7 +43,7 @@ def LED():
 
 Prep()
 ping()
-extract()
+GetTotal()
 LED()
 sleep(10)
 GPIO.cleanup()
