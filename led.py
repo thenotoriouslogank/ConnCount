@@ -33,6 +33,8 @@ DIGITS = [ALL, ONE, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE]
 def Prep():
   GPIO.setmode(GPIO.BCM)
   GPIO.setup(ALL.segments, GPIO.OUT)
+  fp = open('ip.tmp', 'x')
+  fp.close()
 
 def LED():
   for i in DIGITS:
