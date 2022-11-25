@@ -44,7 +44,7 @@ def TestMe():
 def LED():
   for i in DIGITS:
     if MyNum == i.digit:
-      print("The digit for " + i + "is " + i.digit)
+      print(i)
 
 #def Check():
 #  if ZERO.digit == MyNum:
