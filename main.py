@@ -38,13 +38,10 @@ MyNum = int(4)
 def Prep():
   GPIO.setup(ALL.segments, GPIO.OUT)
 
-def TestMe():
-  print(ALL.segments)
-
 def LED():
   for i in DIGITS:
     if i.digit == MyNum:
-      print(i.digit)
+      GPIO.output(i.segments, GPIO.LOW)
 
 #def Check():
 #  if ZERO.digit == MyNum:
@@ -54,7 +51,6 @@ def LED():
 #
 
 Prep()
-TestMe()
 LED()
 #Check()
 #Zero()
