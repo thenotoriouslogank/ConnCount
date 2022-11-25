@@ -37,6 +37,7 @@ SIX = [A, C, D, E, F, G]
 SEVEN = [A, B, C]
 EIGHT = [A, B, C, D, E, F, G]
 NINE = [A, B, C, F, G]
+ALL = [A, B, C, D, E, F, G, DP]
 
 def Zero():
   for p in ZERO:
@@ -77,10 +78,14 @@ def Eight():
 def Nine():
   for p in NINE:
     GPIO.output(p, GPIO.LOW)
-    
+
+def Clear():
+  for p in ALL:
+    GPIO.output(p, GPIO.HIGH)
+
 One()
 sleep(3)
-Six()
-sleep(3)
+Clear()
+sleep(10)
 
 GPIO.cleanup()
