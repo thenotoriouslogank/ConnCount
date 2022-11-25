@@ -85,5 +85,8 @@ def Clear():
 
 One()
 sleep(10)
-
+Clear()
+sleep(10)
+Zero()
+sleep(10)
 GPIO.cleanup()
