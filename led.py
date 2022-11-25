@@ -1,15 +1,11 @@
 import RPi.GPIO as GPIO
+import ping
+import extract
 from time import sleep
-
-GPIO.setmode(GPIO.BCM)
 
 A = 17
 B = 27
 C = 22
-class Display:
-  def __init__(self, digit: int, segments: list):
-    self.digit = digit
-    self.segments = segments
 D = 23
 E = 24
 F = 25
@@ -33,59 +29,19 @@ EIGHT = Display(8, [A, B, C, D, E, F, G])
 NINE = Display(9, [A, B, C, F, G])
 ALL = Display(10, [A, B, C, D, E, F, G, DP])
 DIGITS = [ALL, ONE, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE]
-MyNum = int(4)
 
 def Prep():
+  GPIO.setmode(GPIO.BCM)
   GPIO.setup(ALL.segments, GPIO.OUT)
 
 def LED():
   for i in DIGITS:
-    if i.digit == MyNum:
+    if i.digit == extract.total:
       GPIO.output(i.segments, GPIO.LOW)
 
-#def Check():
-#  if ZERO.digit == MyNum:
-#    print('ZERO')
-#  else:
-#    print('Somethig done got fuckered.')
-#
-
 Prep()
+ping()
+extract()
 LED()
-#Check()
-#Zero()
-#sleep(1)
-#Clear()
-#One()
-#sleep(1)
-#Clear()
-#Two()
-#sleep(1)
-#Clear()
-#Three()
-#sleep(1)
-#Clear()
-#Four()
-#sleep(1)
-#Clear()
-#Five()
-#sleep(1)
-#Clear()
-#Six()
-#sleep(1)
-#Clear()
-#Seven()
-#sleep(1)
-#Clear()
-#Eight()
-#sleep(1)
-#Clear()
-#Nine()
-#sleep(1)
-#Clear()
-#All()
-#sleep(1)
-#Clear()
-#print("Done.")
 sleep(10)
 GPIO.cleanup()
