@@ -33,7 +33,7 @@ EIGHT = Display(8, [A, B, C, D, E, F, G])
 NINE = Display(9, [A, B, C, F, G])
 ALL = Display(10, [A, B, C, D, E, F, G, DP])
 DIGITS = [ALL, ONE, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE]
-MyNum = int(0)
+MyNum = int(4)
 
 def Prep():
   GPIO.setup(ALL.segments, GPIO.OUT)
@@ -43,7 +43,7 @@ def TestMe():
 
 def LED():
   for i in DIGITS:
-    if MyNum == i.digit:
+    if i.digit == MyNum:
       print(i.digit)
 
 #def Check():
