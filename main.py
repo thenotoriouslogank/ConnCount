@@ -4,28 +4,13 @@ from time import sleep
 GPIO.setmode(GPIO.BCM)
 
 A = 17
-GPIO.setup(A, GPIO.OUT)
-
 B = 27
-GPIO.setup(B, GPIO.OUT)
-
 C = 22
-GPIO.setup(C, GPIO.OUT)
-
 D = 23
-GPIO.setup(D, GPIO.OUT)
-
 E = 24
-GPIO.setup(E, GPIO.OUT)
-
 F = 25
-GPIO.setup(F, GPIO.OUT)
-
 G = 19
-GPIO.setup(G, GPIO.OUT)
-
 DP = 6
-GPIO.setup(DP, GPIO.OUT)
 
 ZERO = [A, B, C, D, E, F]
 ONE = [B, C]
@@ -39,6 +24,20 @@ EIGHT = [A, B, C, D, E, F, G]
 NINE = [A, B, C, F, G]
 ALL = [A, B, C, D, E, F, G, DP]
 
+def Prep():
+  for segments in ALL:
+    GPIO.setup(segments, GPIO.OUT)
+
+""" 
+GPIO.setup(A, GPIO.OUT)
+GPIO.setup(B, GPIO.OUT)
+GPIO.setup(C, GPIO.OUT)
+GPIO.setup(D, GPIO.OUT)
+GPIO.setup(E, GPIO.OUT)
+GPIO.setup(F, GPIO.OUT)
+GPIO.setup(G, GPIO.OUT)
+GPIO.setup(DP, GPIO.OUT)
+ """
 def Zero():
   for p in ZERO:
     GPIO.output(p, GPIO.LOW)
@@ -87,6 +86,7 @@ def Clear():
   for p in ALL:
     GPIO.output(p, GPIO.HIGH)
 
+Prep()
 Zero()
 sleep(1)
 Clear()
