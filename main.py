@@ -81,7 +81,7 @@ def Clear():
   for p in ALL:
     GPIO.output(p, GPIO.HIGH)
 
-ZERO = Display('0, [A, B, C, D, E, F]')
+ZERO = Display(0, [A, B, C, D, E, F])
 
 MyNum = int(0)
 
